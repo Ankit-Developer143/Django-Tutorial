@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm1e-!0_o)s)$2c^n1)#5+@%7*kru3itrny()c&ez_7wbq58#4b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ankit-managment.herokuapp.com','127.0.0.1']
 
 
 # Application definition
