@@ -1,4 +1,5 @@
 from django.db import models
+from django_filters import FilterSet
 
 # Create your models here.
 

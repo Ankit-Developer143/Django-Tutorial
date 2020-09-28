@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Customer,Order
+from django.contrib.auth.forms import UserCreationForm
 
 #import order forms
 from .forms import OrderForm,CustomerForm
@@ -85,3 +86,19 @@ def createCustomer(request):
       return redirect('/')
   context = {'form':form}
   return render(request,'managment/customer_form.html',context)
+
+
+
+
+def registerPage(request):
+  form = CreateUserForm()
+  if request.method == 'POST':
+    form = CreateUserForm(request.POST)
+    if form.is_valid():
+      form.save()
+      context = {'form':form}
+  return render(request,'managment/register.html',context)
+
+def loginPage(request):
+  context = {}
+  return render(request,'managment/login.html',context)
